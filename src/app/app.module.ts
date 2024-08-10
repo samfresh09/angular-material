@@ -22,6 +22,7 @@ import {MatTable, MatTableModule} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatFormField} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
+import {MatSort, MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatInput, MatInputModule} from "@angular/material/input";
     MatTableModule,
     MatPaginator,
     MatFormField,
-    MatInputModule
+    MatInputModule,
+    MatSortModule
   ],
   providers: [
     provideAnimationsAsync()

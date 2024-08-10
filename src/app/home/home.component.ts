@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class HomeComponent implements OnInit, AfterViewInit{
 
   @ViewChild(MatPaginator) page!: MatPaginator;
+  @ViewChild(MatSort) sort !: MatSort;
   student:any
   attribut:any
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(): void {
     this.student.paginator= this.page;
+    this.student.sort= this.sort;
 
 
   }
