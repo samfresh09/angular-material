@@ -6,14 +6,19 @@ import {StudentComponent} from "./student/student.component";
 import {PaymentComponent} from "./payment/payment.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {LoginComponent} from "./login/login.component";
+import {AuthentificationGuard} from "./guards/authentification.guard";
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
+  {path: "", redirectTo:"/login", pathMatch:"full"},
   {path: "login", component: LoginComponent},
-  {path: "profils", component: ProfilsComponent},
-  {path: "students", component: StudentComponent},
-  {path: "payment", component: PaymentComponent},
-  {path: "dashboard", component: HomeComponent},
+  {path: "admin", component: DashboardComponent, canActivate : [AuthentificationGuard], children:[
+      {path: "home", component: HomeComponent},
+      {path: "profils", component: ProfilsComponent},
+      {path: "students", component: StudentComponent},
+      {path: "payment", component: PaymentComponent},
+
+    ]},
+
 
 ];
 

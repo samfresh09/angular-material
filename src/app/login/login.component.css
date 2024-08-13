@@ -1,0 +1,32 @@
+mat-form-field{
+ position: relative;
+
+  flex: auto;
+  margin-top: 20px;
+  display: block;
+}
+
+.mbuton-sep{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+mat-card-content{
+  position: relative;
+  justify-content: center;
+  display: block;
+  text-align: center;
+}
+
+.container-login{
+  width: 50%;
+  justify-content: center;
+  display: inline-block;
+}
+
+.container{
+  text-align: center;
+}
+.mt-20{
+  margin-top: 5%;
+}

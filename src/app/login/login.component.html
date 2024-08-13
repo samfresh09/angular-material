@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="container">
+  <div class="padding-10 container-login mt-20">
+    <mat-card [formGroup]="loginFormGroup" class="example-card" appearance="outlined">
+
+      <mat-card-header>
+        <mat-card-title>Login Page</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username or password</mat-label>
+          <input type="text" matInput formControlName="username" >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username or password</mat-label>
+          <input type="text" matInput  formControlName="password">
+        </mat-form-field>
+        <mat-card-actions  align="end">
+          <button class="mbuton-sep"  mat-raised-button color="accent"  >Annuler</button>
+          <button class="mbuton-sep" (click)="login()"  mat-raised-button color="primary"  >Submit</button>
+        </mat-card-actions>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+
+
+</div>

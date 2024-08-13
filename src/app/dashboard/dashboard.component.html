@@ -3,13 +3,14 @@
       <mat-icon>menu</mat-icon>
     </button>
     <div class="spacer"></div>
-    <button routerLink="/home" mat-button>Home</button>
-    <button routerLink="/profils" mat-button>Profils</button>
+    <button routerLink="/admin/home" mat-button>Home</button>
+    <button routerLink="/admin/profils" mat-button>Profils</button>
     <button mat-button [matMenuTriggerFor]="importMenu">
       Imports
       <mat-icon iconPositionEnd >keyboard_arrow_down</mat-icon>
     </button>
-    <button routerLink="/login" mat-raised-button color="accent">Login</button>
+  <button mat-button *ngIf="authService.isAuthentificated">{{authService.username}} </button>
+    <button (click)="logout()" mat-raised-button color="accent">Logout</button>
     <mat-menu #importMenu="matMenu" yPosition="below">
       <button mat-menu-item>Load Students</button>
       <button mat-menu-item>Load Payments</button>
@@ -20,19 +21,19 @@
   <mat-drawer #drawer mode="side" position="start" opened="true">
     <mat-nav-list>
       <mat-list-item>
-        <button routerLink="/dashboard" mat-button>
+        <button routerLink="/admin" mat-button>
           <mat-icon>dashboard</mat-icon>
           Dashboard
         </button>
       </mat-list-item>
       <mat-list-item>
-        <button routerLink="/students" mat-button>
+        <button routerLink="/admin/students" mat-button>
           <mat-icon>person</mat-icon>
           Students
         </button>
       </mat-list-item>
       <mat-list-item>
-        <button routerLink="/payment" mat-button>
+        <button routerLink="/admin/payment" mat-button>
           <mat-icon>money</mat-icon>
           Payments
         </button>
@@ -42,9 +43,11 @@
   </mat-drawer>
 
 
-    <mat-drawer-content>
-      <div style="min-height: 600px">
-      <router-outlet></router-outlet>
+    <mat-drawer-content >
+      <div class="container" style="min-height: 600px">
+      <router-outlet>
+
+      </router-outlet>
       </div>
     </mat-drawer-content>
 
