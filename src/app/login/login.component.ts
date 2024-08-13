@@ -31,6 +31,6 @@ export class LoginComponent implements OnInit{
     if (auth){
       this.router.navigateByUrl("/admin").then(r => false);
     }
-    console.log(username,password);
+    console.log(username,password,this.authService.roles);
   }
 }

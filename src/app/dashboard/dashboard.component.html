@@ -5,15 +5,15 @@
     <div class="spacer"></div>
     <button routerLink="/admin/home" mat-button>Home</button>
     <button routerLink="/admin/profils" mat-button>Profils</button>
-    <button mat-button [matMenuTriggerFor]="importMenu">
+    <button *ngIf="authService.roles.includes('ADMIN') " mat-button [matMenuTriggerFor]="importMenu">
       Imports
       <mat-icon iconPositionEnd >keyboard_arrow_down</mat-icon>
     </button>
   <button mat-button *ngIf="authService.isAuthentificated">{{authService.username}} </button>
     <button (click)="logout()" mat-raised-button color="accent">Logout</button>
     <mat-menu #importMenu="matMenu" yPosition="below">
-      <button mat-menu-item>Load Students</button>
-      <button mat-menu-item>Load Payments</button>
+      <button routerLink="/admin/load-students" mat-menu-item>Load Students</button>
+      <button routerLink="/admin/load-payments" mat-menu-item>Load Payments</button>
     </mat-menu>
 </mat-toolbar>
 

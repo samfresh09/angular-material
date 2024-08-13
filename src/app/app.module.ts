@@ -25,6 +25,9 @@ import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatSort, MatSortModule} from "@angular/material/sort";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthentificationGuard} from "./guards/authentification.guard";
+import { LoadStudentComponent } from './load-student/load-student.component';
+import { LoadPaymentComponent } from './load-payment/load-payment.component';
+import {AuthorizationGuard} from "./guards/authorization.guard";
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import {AuthentificationGuard} from "./guards/authentification.guard";
     ProfilsComponent,
     LoginComponent,
     StudentComponent,
-    PaymentComponent
+    PaymentComponent,
+    LoadStudentComponent,
+    LoadPaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import {AuthentificationGuard} from "./guards/authentification.guard";
   ],
   providers: [
     provideAnimationsAsync(),
-    AuthentificationGuard
+    AuthentificationGuard,
+    AuthorizationGuard
   ],
   bootstrap: [AppComponent]
 })
