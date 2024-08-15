@@ -28,6 +28,7 @@ import {AuthentificationGuard} from "./guards/authentification.guard";
 import { LoadStudentComponent } from './load-student/load-student.component';
 import { LoadPaymentComponent } from './load-payment/load-payment.component';
 import {AuthorizationGuard} from "./guards/authorization.guard";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {AuthorizationGuard} from "./guards/authorization.guard";
     MatFormField,
     MatInputModule,
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync(),

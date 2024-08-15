@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit, AfterViewInit{
     this.student.paginator= this.page;
     this.student.sort= this.sort;
 
-
   }
 
   applyFilter(event: Event) {
