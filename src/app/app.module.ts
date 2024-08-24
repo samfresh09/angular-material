@@ -29,6 +29,7 @@ import { LoadStudentComponent } from './load-student/load-student.component';
 import { LoadPaymentComponent } from './load-payment/load-payment.component';
 import {AuthorizationGuard} from "./guards/authorization.guard";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { StudentPaymentsComponent } from './student-payments/student-payments.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     StudentComponent,
     PaymentComponent,
     LoadStudentComponent,
-    LoadPaymentComponent
+    LoadPaymentComponent,
+    StudentPaymentsComponent
   ],
   imports: [
     BrowserModule,
