@@ -10,6 +10,7 @@ import {AuthentificationGuard} from "./guards/authentification.guard";
 import {LoadStudentComponent} from "./load-student/load-student.component";
 import {LoadPaymentComponent} from "./load-payment/load-payment.component";
 import {AuthorizationGuard} from "./guards/authorization.guard";
+import {StudentPaymentsComponent} from "./student-payments/student-payments.component";
 
 const routes: Routes = [
   {path: "", redirectTo:"/login", pathMatch:"full"},
@@ -18,6 +19,7 @@ const routes: Routes = [
       {path: "home", component: HomeComponent},
       {path: "profils", component: ProfilsComponent},
       {path: "students", component: StudentComponent},
+      {path: "student-payments/:code", component: StudentPaymentsComponent},
       {path: "payment", component: PaymentComponent},
       {path: "load-students", component: LoadStudentComponent, canActivate: [AuthorizationGuard], data:{"roles":["ADMIN"]}},
       {path: "load-payments", component: LoadPaymentComponent, canActivate: [AuthorizationGuard], data:{"roles":["ADMIN"]}},

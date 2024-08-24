@@ -14,7 +14,7 @@ import {MatSort} from "@angular/material/sort";
 export class StudentComponent implements OnInit{
   public students !: Array<Student>;
   public studentsDataSource!:any;
-  public colums=["id","lastname","firstname","email"];
+  public colums=["id","lastname","firstname","email","payments"];
 
   @ViewChild(MatPaginator) page!: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
@@ -43,5 +43,9 @@ export class StudentComponent implements OnInit{
 
   applyFilter(event: KeyboardEvent) {
 
+  }
+
+  getPayment(student: Student) {
+    this.router.navigateByUrl(`/admin/student-payments/${student.code}`);
   }
 }
