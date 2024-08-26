@@ -1,0 +1,11 @@
+mat-form-field{
+  display: block;
+  margin-top: 10px;
+}
+
+pdf-viewer{
+  display: block;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}

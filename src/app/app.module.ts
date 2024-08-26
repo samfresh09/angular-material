@@ -30,6 +30,12 @@ import { LoadPaymentComponent } from './load-payment/load-payment.component';
 import {AuthorizationGuard} from "./guards/authorization.guard";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { StudentPaymentsComponent } from './student-payments/student-payments.component';
+import { NewPaymentComponent } from './new-payment/new-payment.component';
+import {MatOption, MatSelect} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {CommonModule, DatePipe} from "@angular/common";
+import {PdfViewerModule} from "ng2-pdf-viewer";
 
 @NgModule({
   declarations: [
@@ -42,7 +48,8 @@ import { StudentPaymentsComponent } from './student-payments/student-payments.co
     PaymentComponent,
     LoadStudentComponent,
     LoadPaymentComponent,
-    StudentPaymentsComponent
+    StudentPaymentsComponent,
+    NewPaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -65,12 +72,18 @@ import { StudentPaymentsComponent } from './student-payments/student-payments.co
     MatInputModule,
     MatSortModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelect,
+    MatOption,
+    MatDatepickerModule,MatNativeDateModule,
+    CommonModule,
+    PdfViewerModule
   ],
   providers: [
     provideAnimationsAsync(),
     AuthentificationGuard,
-    AuthorizationGuard
+    AuthorizationGuard,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

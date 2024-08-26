@@ -11,7 +11,10 @@
         <mat-label>Filter</mat-label>
         <input class="" matInput  placeholder="Ex. Mia" #input>
       </mat-form-field>
-      <table matSort mat-table [dataSource]="studentPaymentDataSource" class="mat-elevation-z8">
+      <div class="add-pay">
+        <button (click)="newPayment()" mat-raised-button color="primary"> Nouveau Payment</button>
+      </div>
+      <table  matSort mat-table [dataSource]="studentPaymentDataSource" class="mat-elevation-z8 mt-5">
 
         <!-- Position Column -->
         <ng-container matColumnDef="id">

@@ -6,3 +6,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .padding-10{
   padding: 10px;
 }
+
+
+.mt-5{
+
+  margin-top: 10px;
+}
+
+.h-3{
+  height: 50px;
+}

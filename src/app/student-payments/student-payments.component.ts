@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Payment} from "../models/Payment";
 import {MatTableDataSource} from "@angular/material/table";
 import {StudentService} from "../services/student.service";
@@ -21,7 +21,8 @@ export class StudentPaymentsComponent implements  OnInit{
   @ViewChild(MatSort) sort!: MatSort;
   constructor(
     private activeRouter:ActivatedRoute,
-    private studentService:StudentService
+    private studentService:StudentService,
+    private router:Router
   ) {}
   ngOnInit(): void {
    this.studentCode= this.activeRouter.snapshot.params["code"]
@@ -38,4 +39,11 @@ export class StudentPaymentsComponent implements  OnInit{
     })
   }
 
+  public newPayment(){
+    this.router.navigateByUrl("/admin/new-payments/"+this.studentCode)
+  }
+
+  afterLoadComplete() {
+
+  }
 }
