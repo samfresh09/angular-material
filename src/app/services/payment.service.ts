@@ -24,5 +24,12 @@ export class PaymentService {
     return this.http.post<Payment>("http://localhost:8085/api/payment/",formData);
   }
 
+  public getOnePayment(id:any):Observable<Payment>{
+    return this.http.get<Payment>("http://localhost:8085/api/payment/"+id);
+  }
 
+
+  getPaymentDetails(paymentId: any) {
+    return this.http.get("http://localhost:8085/api/payment/facture/"+paymentId,{responseType:'blob'});
+  }
 }

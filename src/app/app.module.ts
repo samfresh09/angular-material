@@ -36,6 +36,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {CommonModule, DatePipe} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
     LoadStudentComponent,
     LoadPaymentComponent,
     StudentPaymentsComponent,
-    NewPaymentComponent
+    NewPaymentComponent,
+    PaymentDetailsComponent
   ],
   imports: [
     BrowserModule,

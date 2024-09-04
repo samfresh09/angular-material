@@ -3,6 +3,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {HttpClient} from "@angular/common/http";
 import {MatTableDataSource} from "@angular/material/table";
+import {Router} from "@angular/router";
+import {Payment} from "../models/Payment";
 
 @Component({
   selector: 'app-payment',
@@ -17,7 +19,7 @@ export class PaymentComponent implements  OnInit{
   public  payments!: any;
   public dataSource!: any;
   public colums!:any;
-  constructor(protected http:HttpClient) {
+  constructor(private http:HttpClient,private router:Router) {
   }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class PaymentComponent implements  OnInit{
 
     )
 
-    this.colums= ["id","date","montant","type","status","student"];
+    this.colums= ["id","date","montant","type","status","student","action"];
   }
 
 
@@ -50,5 +52,8 @@ export class PaymentComponent implements  OnInit{
   }
 
 
+  goToDetails(payment:Payment) {
+    this.router.navigateByUrl("/admin/payment-details/"+payment.id)
 
+  }
 }
